@@ -1,0 +1,7 @@
+<div class="card text-light">  
+  <%= link_to "", cocktail_path(cocktail), class: "link" %>
+  <%= cl_image_tag cocktail.photo.key, class: "card-img image-fit-index" %>
+    <div class="card-img-overlay">
+  <h2 class="card-title"><%= cocktail.name %></h2>
+  </div>
+</div>

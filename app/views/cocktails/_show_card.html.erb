@@ -1,0 +1,27 @@
+<div class="card card-width">
+  <%= cl_image_tag cocktail.photo.key, class: "card-img-top image-fit" %>
+  <div class="card-body">
+    <h4 class="card-title"><%= cocktail.name %>
+    <i class="fas fa-edit fa-xs text-primary pointer" id="edit"></i>
+    <i class="fas fa-check-circle fa-xs text-success pointer display-none" id="hide"></i>
+    </h4>
+    <p class="card-text">List of ingredients</p>
+    <ul id="list">
+    <% @doses.each do |dose| %>
+        <%= link_to cocktail_dose_path(cocktail, dose), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
+        <li>
+          <i class="fas fa-minus-circle fa-sm edit-ingredients-color edit-ingredients"></i>
+          <% end %>
+          <%= dose.ingredient.name %>, 
+          <%= dose.description %>
+        </li>
+    <% end %>
+    </ul>
+    <%= link_to "Add a dose", new_cocktail_dose_path(cocktail), class: "btn btn-warning btn-block display-none text-white", id: "add" %>
+    <%= link_to "Remove cocktail",
+                cocktail_path(cocktail),
+                method: :delete, data: { confirm: "Are you sure?" },
+                class: "btn btn-primary btn-block display-none text-white", id: "remove" %>
+  </div>
+</div>
+
