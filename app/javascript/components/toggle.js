@@ -17,6 +17,20 @@ const toggleAll = () => {
   toggle("add", "display-none");
   toggle("edit", "display-none");
   toggle("hide", "display-none");
+
 }
 
-export { toggleAll };
+const toggleEdit = () => {
+  const enableEdit = document.getElementById("edit");
+  if (enableEdit) {
+    enableEdit.addEventListener("click", toggleAll);
+  }
+
+  const disableEdit = document.getElementById("hide");
+  if (disableEdit) {
+    disableEdit.addEventListener("click", toggleAll);  
+  }
+}
+
+export { toggleEdit };
+

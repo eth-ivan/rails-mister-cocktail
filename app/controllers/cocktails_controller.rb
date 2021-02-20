@@ -5,6 +5,7 @@ class CocktailsController < ApplicationController
     if params[:query]
       query = params[:query]
       @cocktails = Cocktail.where("name LIKE ?", "%#{query}%")
+      raise
     else
       @cocktails = Cocktail.all
     end
