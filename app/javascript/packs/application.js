@@ -16,9 +16,9 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import 'bootstrap';
-import { toggleEdit } from '../components/toggle';
+import { toggle } from '../components/toggle';
 
 
 document.addEventListener('turbolinks:load', () => {
-  toggleEdit();
+  toggle();
 });

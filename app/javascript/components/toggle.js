@@ -5,32 +5,32 @@ const edit = () => {
   });
 }
 
-const toggle = (id, style) => {
+const toggleElement = (id, style) => {
   const element = document.getElementById(id);
   element.classList.toggle(style);
 }
 
-const toggleAll = () => {
+const toggleElements = () => {
   edit();
-  toggle("list", "list-style-none");
-  toggle("remove", "display-none");
-  toggle("add", "display-none");
-  toggle("edit", "display-none");
-  toggle("hide", "display-none");
+  toggleElement("list", "list-style-none");
+  toggleElement("remove", "display-none");
+  toggleElement("add", "display-none");
+  toggleElement("edit", "display-none");
+  toggleElement("hide", "display-none");
 
 }
 
-const toggleEdit = () => {
+const toggle = () => {
   const enableEdit = document.getElementById("edit");
   if (enableEdit) {
-    enableEdit.addEventListener("click", toggleAll);
+    enableEdit.addEventListener("click", toggleElements);
   }
 
   const disableEdit = document.getElementById("hide");
   if (disableEdit) {
-    disableEdit.addEventListener("click", toggleAll);  
+    disableEdit.addEventListener("click", toggleElements);  
   }
 }
 
-export { toggleEdit };
+export { toggle };
 
