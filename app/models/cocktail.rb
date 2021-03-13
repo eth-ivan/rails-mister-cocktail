@@ -1,6 +1,6 @@
 class Cocktail < ApplicationRecord
   # active storage: cette ligne permettra de faire @cocktail.photo...
-  has_one_attached :photo
+  has_many_attached :photos
 
   # validations
   validates :name, presence: true, uniqueness: true
